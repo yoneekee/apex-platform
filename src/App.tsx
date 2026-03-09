@@ -9,6 +9,7 @@ import Signup from "./pages/Signup";
 import AboutPage from "./pages/About";
 import DetailView from "./pages/DetailView";
 import Collection from "./pages/Collection";
+import Pricing from "./pages/Pricing";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
