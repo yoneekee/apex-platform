@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import AboutPage from "./pages/About";
+import DetailView from "./pages/DetailView";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
