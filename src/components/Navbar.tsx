@@ -198,6 +198,13 @@ export default function Navbar({ items = defaultNavItems, logo = "Platform" }: N
                   </div>
                 ))}
                 <div className="mt-6 flex flex-col gap-3">
+                  <button
+                    onClick={toggleTheme}
+                    className="flex items-center justify-center gap-2 text-sm font-medium py-3 border border-border rounded-full text-foreground"
+                  >
+                    {theme === "light" ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
+                    {theme === "light" ? "Dark Mode" : "Light Mode"}
+                  </button>
                   <a href="/login" className="text-center text-sm font-medium py-3 border border-border rounded-full text-foreground">
                     Sign In
                   </a>
