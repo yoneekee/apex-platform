@@ -43,6 +43,8 @@ const App = () => (
             <Route path="/dashboard/notifications" element={<Settings />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/checkout" element={<Checkout />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
