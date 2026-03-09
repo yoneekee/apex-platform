@@ -22,7 +22,7 @@ const defaultNavItems: NavItem[] = [
   { label: "Collection", href: "/collection" },
   { label: "Portfolio", href: "#portfolio" },
   { label: "About", href: "/about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 interface NavbarProps {
