@@ -4,7 +4,23 @@
 
 @layer base {
   :root {
-    /* Warm neutral palette */
+    /* ═══════════════════════════════════════════
+       🎨 BRAND TOKENS — Change these to rebrand
+       ═══════════════════════════════════════════ */
+
+    /* Brand accent (Sapphire) — swap this one value to change the entire accent */
+    --brand-hue: 221;
+    --brand-saturation: 83%;
+    --brand-lightness: 53%;
+
+    /* Neutral base — adjust hue to warm/cool the palette */
+    --neutral-hue: 220;
+    --neutral-saturation: 14%;
+
+    /* ═══════════════════════════════════════════
+       Derived semantic tokens (auto-calculated)
+       ═══════════════════════════════════════════ */
+
     --background: 0 0% 100%;
     --foreground: 222 47% 11%;
 
@@ -14,75 +30,74 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    /* Sapphire accent */
-    --primary: 221 83% 53%;
+    --primary: var(--brand-hue) var(--brand-saturation) var(--brand-lightness);
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 14% 96%;
+    --secondary: var(--neutral-hue) var(--neutral-saturation) 96%;
     --secondary-foreground: 222 47% 11%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 9% 46%;
+    --muted: var(--neutral-hue) var(--neutral-saturation) 96%;
+    --muted-foreground: var(--neutral-hue) 9% 46%;
 
-    --accent: 220 14% 96%;
+    --accent: var(--neutral-hue) var(--neutral-saturation) 96%;
     --accent-foreground: 222 47% 11%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 221 83% 53%;
+    --border: var(--neutral-hue) 13% 91%;
+    --input: var(--neutral-hue) 13% 91%;
+    --ring: var(--brand-hue) var(--brand-saturation) var(--brand-lightness);
 
     --radius: 0.75rem;
 
-    /* Custom tokens */
+    /* Custom effect tokens */
     --glass-bg: 0 0% 100% / 0.7;
     --glass-border: 0 0% 100% / 0.2;
     --shadow-soft: 0 4px 30px -4px hsl(222 47% 11% / 0.08);
     --shadow-elevated: 0 20px 60px -15px hsl(222 47% 11% / 0.15);
-    --gradient-subtle: linear-gradient(135deg, hsl(220 14% 96%), hsl(0 0% 100%));
-    --gradient-hero: linear-gradient(180deg, hsl(220 14% 96% / 0.5) 0%, hsl(0 0% 100%) 100%);
+    --gradient-subtle: linear-gradient(135deg, hsl(var(--neutral-hue) var(--neutral-saturation) 96%), hsl(0 0% 100%));
+    --gradient-hero: linear-gradient(180deg, hsl(var(--neutral-hue) var(--neutral-saturation) 96% / 0.5) 0%, hsl(0 0% 100%) 100%);
 
-    /* Sidebar tokens */
+    /* Sidebar */
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 222 47% 11%;
-    --sidebar-primary: 221 83% 53%;
+    --sidebar-primary: var(--brand-hue) var(--brand-saturation) var(--brand-lightness);
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 14% 96%;
+    --sidebar-accent: var(--neutral-hue) var(--neutral-saturation) 96%;
     --sidebar-accent-foreground: 222 47% 11%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 221 83% 53%;
+    --sidebar-border: var(--neutral-hue) 13% 91%;
+    --sidebar-ring: var(--brand-hue) var(--brand-saturation) var(--brand-lightness);
   }
 
   .dark {
     --background: 222 47% 6%;
-    --foreground: 220 14% 96%;
+    --foreground: var(--neutral-hue) var(--neutral-saturation) 96%;
 
     --card: 222 47% 8%;
-    --card-foreground: 220 14% 96%;
+    --card-foreground: var(--neutral-hue) var(--neutral-saturation) 96%;
 
     --popover: 222 47% 8%;
-    --popover-foreground: 220 14% 96%;
+    --popover-foreground: var(--neutral-hue) var(--neutral-saturation) 96%;
 
-    --primary: 221 83% 53%;
+    --primary: var(--brand-hue) var(--brand-saturation) var(--brand-lightness);
     --primary-foreground: 0 0% 100%;
 
     --secondary: 222 47% 11%;
-    --secondary-foreground: 220 14% 96%;
+    --secondary-foreground: var(--neutral-hue) var(--neutral-saturation) 96%;
 
     --muted: 222 47% 11%;
-    --muted-foreground: 220 9% 60%;
+    --muted-foreground: var(--neutral-hue) 9% 60%;
 
     --accent: 222 47% 11%;
-    --accent-foreground: 220 14% 96%;
+    --accent-foreground: var(--neutral-hue) var(--neutral-saturation) 96%;
 
     --destructive: 0 62% 30%;
-    --destructive-foreground: 220 14% 96%;
+    --destructive-foreground: var(--neutral-hue) var(--neutral-saturation) 96%;
 
     --border: 222 47% 14%;
     --input: 222 47% 14%;
-    --ring: 221 83% 53%;
+    --ring: var(--brand-hue) var(--brand-saturation) var(--brand-lightness);
 
     --glass-bg: 222 47% 8% / 0.8;
     --glass-border: 0 0% 100% / 0.1;
@@ -90,13 +105,13 @@
     --shadow-elevated: 0 20px 60px -15px hsl(0 0% 0% / 0.5);
 
     --sidebar-background: 222 47% 8%;
-    --sidebar-foreground: 220 14% 96%;
-    --sidebar-primary: 221 83% 53%;
+    --sidebar-foreground: var(--neutral-hue) var(--neutral-saturation) 96%;
+    --sidebar-primary: var(--brand-hue) var(--brand-saturation) var(--brand-lightness);
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 222 47% 11%;
-    --sidebar-accent-foreground: 220 14% 96%;
+    --sidebar-accent-foreground: var(--neutral-hue) var(--neutral-saturation) 96%;
     --sidebar-border: 222 47% 14%;
-    --sidebar-ring: 221 83% 53%;
+    --sidebar-ring: var(--brand-hue) var(--brand-saturation) var(--brand-lightness);
   }
 }
 

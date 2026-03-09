@@ -14,6 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
+        /* 🎨 BRAND FONT — change here + index.html <link> to rebrand */
         sans: ["Inter", "system-ui", "-apple-system", "sans-serif"],
       },
       spacing: {
