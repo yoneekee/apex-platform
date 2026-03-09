@@ -49,6 +49,7 @@ function CartButton() {
   );
 }
 
+export default function Navbar({ items = defaultNavItems, logo = "Platform" }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [megaOpen, setMegaOpen] = useState<string | null>(null);
