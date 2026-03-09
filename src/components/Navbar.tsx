@@ -19,6 +19,7 @@ const defaultNavItems: NavItem[] = [
     ],
   },
   { label: "Features", href: "#features" },
+  { label: "Collection", href: "/collection" },
   { label: "Portfolio", href: "#portfolio" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "#contact" },
