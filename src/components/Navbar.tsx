@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, ArrowRight, ShoppingBag, Sun, Moon } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import { useTheme } from "@/hooks/use-theme";
+import CommandPalette from "@/components/CommandPalette";
 
 interface NavItem {
   label: string;
