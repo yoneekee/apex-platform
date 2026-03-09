@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown, ArrowRight, ShoppingBag } from "lucide-react";
+import { Menu, X, ChevronDown, ArrowRight, ShoppingBag, Sun, Moon } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
+import { useTheme } from "@/hooks/use-theme";
 
 interface NavItem {
   label: string;
@@ -53,6 +54,7 @@ export default function Navbar({ items = defaultNavItems, logo = "Platform" }: N
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [megaOpen, setMegaOpen] = useState<string | null>(null);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -124,6 +126,23 @@ export default function Navbar({ items = defaultNavItems, logo = "Platform" }: N
           </div>
 
           <div className="hidden md:flex items-center gap-3">
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-xl text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+              aria-label="Toggle theme"
+            >
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.div
+                  key={theme}
+                  initial={{ rotate: -90, opacity: 0, scale: 0.5 }}
+                  animate={{ rotate: 0, opacity: 1, scale: 1 }}
+                  exit={{ rotate: 90, opacity: 0, scale: 0.5 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {theme === "light" ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
+                </motion.div>
+              </AnimatePresence>
+            </button>
             <CartButton />
             <a href="/login" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-4 py-2">
               Sign In
@@ -179,6 +198,13 @@ export default function Navbar({ items = defaultNavItems, logo = "Platform" }: N
                   </div>
                 ))}
                 <div className="mt-6 flex flex-col gap-3">
+                  <button
+                    onClick={toggleTheme}
+                    className="flex items-center justify-center gap-2 text-sm font-medium py-3 border border-border rounded-full text-foreground"
+                  >
+                    {theme === "light" ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
+                    {theme === "light" ? "Dark Mode" : "Light Mode"}
+                  </button>
                   <a href="/login" className="text-center text-sm font-medium py-3 border border-border rounded-full text-foreground">
                     Sign In
                   </a>
