@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, ArrowRight, ShoppingBag, Sun, Moon } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import { useTheme } from "@/hooks/use-theme";
+import CommandPalette from "@/components/CommandPalette";
 
 interface NavItem {
   label: string;
@@ -126,6 +127,7 @@ export default function Navbar({ items = defaultNavItems, logo = "Platform" }: N
           </div>
 
           <div className="hidden md:flex items-center gap-3">
+            <CommandPalette />
             <button
               onClick={toggleTheme}
               className="p-2 rounded-xl text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
