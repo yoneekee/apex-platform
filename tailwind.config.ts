@@ -16,6 +16,17 @@ export default {
       fontFamily: {
         sans: ["Inter", "system-ui", "-apple-system", "sans-serif"],
       },
+      spacing: {
+        "section-sm": "5rem",
+        "section-md": "7rem",
+        "section-lg": "8rem",
+        "nav-height": "5rem",
+        "nav-height-sm": "4rem",
+      },
+      maxWidth: {
+        tight: "64rem",
+        wide: "80rem",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
