@@ -31,7 +31,24 @@ interface NavbarProps {
   logo?: string;
 }
 
-export default function Navbar({ items = defaultNavItems, logo = "Platform" }: NavbarProps) {
+function CartButton() {
+  const { totalItems, setIsOpen } = useCart();
+  return (
+    <button
+      onClick={() => setIsOpen(true)}
+      className="relative p-2 text-muted-foreground hover:text-foreground transition-colors"
+      aria-label="Open cart"
+    >
+      <ShoppingBag className="h-4 w-4" />
+      {totalItems > 0 && (
+        <span className="absolute -top-0.5 -right-0.5 w-4 h-4 text-[10px] font-semibold bg-primary text-primary-foreground rounded-full flex items-center justify-center">
+          {totalItems}
+        </span>
+      )}
+    </button>
+  );
+}
+
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [megaOpen, setMegaOpen] = useState<string | null>(null);
