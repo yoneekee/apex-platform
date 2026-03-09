@@ -2,14 +2,14 @@
 
 ## 기술 스택
 - **React + TypeScript + Vite**
-- **Tailwind CSS** (커스텀 디자인 토큰, 글래스모피즘)
+- **Tailwind CSS** (커스텀 디자인 토큰, 글래스모피즘, 다크모드)
 - **Framer Motion** (입장/스크롤 애니메이션)
 - **Lucide React** (아이콘)
 - **Zod** (폼 유효성 검사)
 
 ---
 
-## 구현된 페이지 (8개)
+## 구현된 페이지 (13개)
 
 | 경로 | 페이지 | 주요 기능 |
 |------|--------|-----------|
@@ -21,6 +21,11 @@
 | `/collection` | **컬렉션 & 검색** | 필터 사이드바, 검색, 그리드/리스트 뷰, 위시리스트, Load More |
 | `/pricing` | **요금제** | Monthly/Yearly 토글, 3단계 카드, 기능 체크리스트, FAQ |
 | `/contact` | **연락처** | Zod 폼 검증, 성공 상태 애니메이션, 맵 플레이스홀더, 소셜 링크 |
+| `/dashboard` | **대시보드** | 사이드바 레이아웃, 통계 위젯, 미니 차트, Quick Actions, 활동 피드 |
+| `/settings` | **설정** | 프로필 편집, 보안(2FA/비밀번호), 알림 센터(우선순위별 색상) |
+| `/checkout` | **체크아웃** | Shipping→Payment 2단계, 카드 프리뷰 UI, Order Success 애니메이션 |
+| `/blog` | **블로그 목록** | 피처드 히어로, 카테고리 필터, 읽기 시간, 저자 카드 그리드 |
+| `/blog/:slug` | **블로그 포스트** | 스티키 ToC(스크롤 추적), 소셜 공유, 스크롤 fade-in, 뉴스레터 CTA |
 
 ---
 
@@ -28,7 +33,8 @@
 
 | 컴포넌트 | 설명 |
 |----------|------|
-| `Navbar` | 글래스모피즘 내비바, 메가메뉴, 모바일 사이드바 |
+| `Navbar` | 글래스모피즘 내비바, 메가메뉴, 모바일 사이드바, 다크모드 토글, 카트 아이콘 |
+| `CartDrawer` | 오른쪽 슬라이드 패널, 수량 조절, 삭제 애니메이션, 소계 |
 | `HeroSection` | `centered` / `split` / `video` 변형 지원 |
 | `FeatureGrid` | 호버 반응형 카드 + Lucide 아이콘 |
 | `PortfolioShowcase` | 카테고리 필터링 + AnimatePresence |
@@ -43,9 +49,19 @@
 
 ---
 
+## 시스템 기능
+
+| 기능 | 설명 |
+|------|------|
+| **다크모드** | Sun/Moon 토글, `localStorage` 유지, 시스템 설정 자동 감지, 부드러운 CSS 전환 |
+| **카트 시스템** | `CartContext` 전역 상태, 추가/삭제/수량 변경, Navbar 배지 |
+| **테마 시스템** | `index.css` CSS 변수 + `tailwind.config.ts` 시맨틱 토큰으로 일원화 |
+
+---
+
 ## 디자인 시스템
-- **색상**: Sapphire 액센트 + 모노톤 뉴트럴 (HSL 토큰)
-- **타이포그래피**: Inter
+- **색상**: Sapphire 액센트 + 모노톤 뉴트럴 (HSL 토큰), 다크모드는 deep charcoal/navy
+- **타이포그래피**: Inter, 블로그 본문 line-height 1.8
 - **효과**: 글래스모피즘(`.glass`), 소프트 섀도우(`--shadow-elevated`), 그래디언트
-- **애니메이션**: staggered fade-in, 스프링 전환, 스크롤 트리거
+- **애니메이션**: staggered fade-in, 스프링 전환, 스크롤 트리거, `layoutId` 탭 전환
 - **반응형**: 모바일 퍼스트 설계
