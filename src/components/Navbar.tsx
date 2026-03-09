@@ -20,7 +20,7 @@ const defaultNavItems: NavItem[] = [
   },
   { label: "Features", href: "#features" },
   { label: "Portfolio", href: "#portfolio" },
-  { label: "About", href: "#about" },
+  { label: "About", href: "/about" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -104,11 +104,11 @@ export default function Navbar({ items = defaultNavItems, logo = "Platform" }: N
           </div>
 
           <div className="hidden md:flex items-center gap-3">
-            <a href="#contact" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-4 py-2">
+            <a href="/login" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-4 py-2">
               Sign In
             </a>
             <a
-              href="#contact"
+              href="/signup"
               className="inline-flex items-center gap-2 text-sm font-medium bg-primary text-primary-foreground px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity"
             >
               Get Started <ArrowRight className="h-3.5 w-3.5" />
@@ -158,10 +158,10 @@ export default function Navbar({ items = defaultNavItems, logo = "Platform" }: N
                   </div>
                 ))}
                 <div className="mt-6 flex flex-col gap-3">
-                  <a href="#contact" className="text-center text-sm font-medium py-3 border border-border rounded-full text-foreground">
+                  <a href="/login" className="text-center text-sm font-medium py-3 border border-border rounded-full text-foreground">
                     Sign In
                   </a>
-                  <a href="#contact" className="text-center text-sm font-medium py-3 bg-primary text-primary-foreground rounded-full">
+                  <a href="/signup" className="text-center text-sm font-medium py-3 bg-primary text-primary-foreground rounded-full">
                     Get Started
                   </a>
                 </div>
