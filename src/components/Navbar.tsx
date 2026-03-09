@@ -20,7 +20,7 @@ const defaultNavItems: NavItem[] = [
   },
   { label: "Features", href: "#features" },
   { label: "Portfolio", href: "#portfolio" },
-  { label: "About", href: "#about" },
+  { label: "About", href: "/about" },
   { label: "Contact", href: "#contact" },
 ];
 
