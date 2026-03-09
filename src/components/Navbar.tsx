@@ -106,6 +106,7 @@ export default function Navbar({ items = defaultNavItems, logo = "Platform" }: N
           </div>
 
           <div className="hidden md:flex items-center gap-3">
+            <CartButton />
             <a href="/login" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-4 py-2">
               Sign In
             </a>
