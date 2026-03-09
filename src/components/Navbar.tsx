@@ -158,10 +158,10 @@ export default function Navbar({ items = defaultNavItems, logo = "Platform" }: N
                   </div>
                 ))}
                 <div className="mt-6 flex flex-col gap-3">
-                  <a href="#contact" className="text-center text-sm font-medium py-3 border border-border rounded-full text-foreground">
+                  <a href="/login" className="text-center text-sm font-medium py-3 border border-border rounded-full text-foreground">
                     Sign In
                   </a>
-                  <a href="#contact" className="text-center text-sm font-medium py-3 bg-primary text-primary-foreground rounded-full">
+                  <a href="/signup" className="text-center text-sm font-medium py-3 bg-primary text-primary-foreground rounded-full">
                     Get Started
                   </a>
                 </div>

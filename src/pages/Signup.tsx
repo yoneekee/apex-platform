@@ -11,9 +11,9 @@ const fadeUp = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] as const },
   }),
-};
+} as const;
 
 const requirements = [
   { label: "At least 8 characters", test: (p: string) => p.length >= 8 },
