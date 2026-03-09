@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
+import { Menu, X, ChevronDown, ArrowRight, ShoppingBag } from "lucide-react";
+import { useCart } from "@/contexts/CartContext";
 
 interface NavItem {
   label: string;
