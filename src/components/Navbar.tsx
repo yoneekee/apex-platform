@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
+import { Menu, X, ChevronDown, ArrowRight, ShoppingBag } from "lucide-react";
+import { useCart } from "@/contexts/CartContext";
 
 interface NavItem {
   label: string;
@@ -28,6 +29,24 @@ const defaultNavItems: NavItem[] = [
 interface NavbarProps {
   items?: NavItem[];
   logo?: string;
+}
+
+function CartButton() {
+  const { totalItems, setIsOpen } = useCart();
+  return (
+    <button
+      onClick={() => setIsOpen(true)}
+      className="relative p-2 text-muted-foreground hover:text-foreground transition-colors"
+      aria-label="Open cart"
+    >
+      <ShoppingBag className="h-4 w-4" />
+      {totalItems > 0 && (
+        <span className="absolute -top-0.5 -right-0.5 w-4 h-4 text-[10px] font-semibold bg-primary text-primary-foreground rounded-full flex items-center justify-center">
+          {totalItems}
+        </span>
+      )}
+    </button>
+  );
 }
 
 export default function Navbar({ items = defaultNavItems, logo = "Platform" }: NavbarProps) {
@@ -105,6 +124,7 @@ export default function Navbar({ items = defaultNavItems, logo = "Platform" }: N
           </div>
 
           <div className="hidden md:flex items-center gap-3">
+            <CartButton />
             <a href="/login" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-4 py-2">
               Sign In
             </a>
