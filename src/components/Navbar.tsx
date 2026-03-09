@@ -127,6 +127,7 @@ export default function Navbar({ items = defaultNavItems, logo = "Platform" }: N
           </div>
 
           <div className="hidden md:flex items-center gap-3">
+            <CommandPalette />
             <button
               onClick={toggleTheme}
               className="p-2 rounded-xl text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
