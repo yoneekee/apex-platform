@@ -129,7 +129,7 @@ export default function HeroSection({
           >
             <div className="flex items-center gap-6 text-xs text-muted-foreground">
               <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-green-500" />
+                <span className="w-2 h-2 rounded-full bg-primary" />
                 99.9% Uptime
               </span>
               <span className="w-px h-4 bg-border" />
