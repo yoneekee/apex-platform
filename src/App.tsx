@@ -10,6 +10,7 @@ import AboutPage from "./pages/About";
 import DetailView from "./pages/DetailView";
 import Collection from "./pages/Collection";
 import Pricing from "./pages/Pricing";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
